@@ -1,0 +1,32 @@
+{{ define "input" }}
+{
+    "Title": "Quit Like a Pro",
+    "Description": "How to quit anything like a pro",
+    "Author": "Morgan Conbere"
+}
+{{ end }}
+
+{{ define "content" -}}
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-3">How to Quit Anything Like a Pro</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            {{ range .Quittables }}{{ template "quittable" . }}{{ end }}
+        </div>
+    </div>
+</div>
+{{- end }}
+
+{{ define "quittable" -}}
+<div class="panel">
+    <h4>{{ .Title }}</h4>
+    <ol>
+        {{ range .Steps }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ol>
+</div>
+{{- end }}

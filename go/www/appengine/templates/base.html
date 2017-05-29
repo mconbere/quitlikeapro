@@ -1,0 +1,62 @@
+{{ define "base" -}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {{ if .Description }}<meta name="description" content="{{ .Description }}">{{ end }}
+        {{ if .Author }}<meta name="author" content="{{ .Author }}">{{ end }}
+
+        <link rel="apple-touch-icon" sizes="57x57" href="/static/img/logo/logo_57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/static/img/logo/logo_60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/static/img/logo/logo_72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/static/img/logo/logo_76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/static/img/logo/logo_114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/static/img/logo/logo_120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/static/img/logo/logo_144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/img/logo/logo_152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/logo/logo_180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/static/img/logo/logo_192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/img/logo/logo_32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/static/img/logo/logo_96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/img/logo/logo_16.png">
+        <link rel="mask-icon" href="/static/img/logo/logo_bw.svg" color="#4b5052">
+        <meta name="msapplication-TileColor" content="#4b5052">
+        <meta name="msapplication-TileImage" content="/static/img/logo/logo_144.png">
+        <meta name="theme-color" content="#4b5052">
+
+        <title>{{ .Title }}</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/static/css/main.css" rel="stylesheet">
+
+        {{ template "css" . }}
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                <h3 class="text-muted">{{ .Title }}</h3>
+            </div>
+        </div>
+
+        {{ template "content" . }}
+
+        <div class="container">
+            <footer class="footer">
+                <p>&copy; {{ .Author }} 2017</p>
+            </footer>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/static/js/bootstrap.min.js"></script>
+        {{ template "js" . }}
+
+    </body>
+</html>
+{{- end }}

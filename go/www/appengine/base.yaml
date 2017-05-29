@@ -1,0 +1,19 @@
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^static/src/.*$
+
+handlers:
+- url: /favicon\.ico
+  static_files: static/favicon/favicon.ico
+  upload: static/favicon/favicon.ico
+
+- url: /static/(.*)
+  static_files: static/\1
+  upload: static/(.*)
+
+- url: /.*
+  script: _go_app

@@ -1,0 +1,13 @@
+application: quitlikeapro
+module: beta-www
+version: 1-0
+runtime: go
+api_version: go1
+
+# Cache period for static files. This cache cannot be flushed, so don't be
+# greedy or you won't see changes.
+default_expiration: "1m"
+
+includes:
+- base.yaml
+

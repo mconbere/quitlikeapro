@@ -1,14 +1,55 @@
-# Binaries for programs and plugins
-*.exe
-*.dll
-*.so
-*.dylib
+# Ignore random Apple files.
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.DS_Store
+.DocumentRevisions-V100
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
+.apdisk
+.fseventsd
+Icon
+Network Trash Folder
+Temporary Items
 
-# Test binary, build with `go test -c`
-*.test
+# Ignore random Windows files.
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.vscode
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+# Ignore editor temp files.
+*~
+\#*\#
+Session.vim
+.netrwhist
 
-# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
-.glide/
+# Ignore python temp files.
+*.pyc
+
+# Ignore Xcode user and temp files.
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+go/tokentransit/agency/cmd/node_modules/

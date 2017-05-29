@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# .wk file for Token Transit's main source repo. wk is a tool for setting up environment variables
+# inside of a directory tree. If any tools for building code in this repository need additional
+# environment setup (I'm look at you, Go!), add the necessary exports here.
+#
+# Artifact files that go along with maintaining the environment should be placed in $WKDIR,
+# which is set up by wk to be a per-workspace directory for user-owned files.
+
+workspace=$PWD
+tools=$workspace/tools
+bin=$tools/bin
+arch=$tools/$(uname -s | tr '[:upper:]' '[:lower:]')-$(uname -m | tr '[:upper:]' '[:lower:]')
+
+# Maintain a per-workspace App Engine OAUTH2 token.
+if [[ -e "$WKDIR/appcfg_oauth2_tokens" ]]; then
+    rm ~/.appcfg_oauth2_tokens
+    cp "$WKDIR/appcfg_oauth2_tokens" ~/.appcfg_oauth2_tokens
+fi
+if [[ -e "~/.appcfg_oauth2_tokens" ]]; then
+    cp ~/.appcfg_oauth2_tokens "$WKDIR/appcfg_oauth2_tokens"
+fi
+
+export WORKSPACE=$workspace
+export GOPATH=$workspace/gopath
+export PATH=$bin:$arch/bin:$arch/go_appengine:$arch/google-cloud-sdk/bin:$GOPATH/bin:$PATH
